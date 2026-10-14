@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Limbus 助手</string>
+    <string name="a11y_desc">用於在 Limbus Company 中模擬點擊與滑動，執行你在 Limbus 助手中選擇的日常任務。本服務不讀取任何畫面內容或文字。</string>
+</resources>
