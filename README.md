@@ -12,7 +12,7 @@
 ## 与其他项目的区别
 
 由于采用 MAA 框架进行开发，这个自动化工具支持的目标为 **Android 设备/模拟器**，并不支持PC端（Steam）游戏的自动化。
-电脑版运行在电脑上，通过 ADB 控制 Android 手机或模拟器中的游戏；也可以使用下方的 **安卓 App**，直接在手机上运行。
+电脑版运行在电脑上，通过 ADB 控制 Android 手机或模拟器中的游戏；也可以使用下方的 **安卓 App（Limbus 助手）**，直接在手机上运行。
 
 > [!IMPORTANT]
 > 所有识别模板均基于 **16:9（1280x720）** 画面。真机多为 20:9 等长屏，请先用 ADB 把分辨率临时改为 16:9：
@@ -21,23 +21,27 @@
 > adb shell wm size reset       # 用完后恢复
 > ```
 
-## 安卓 App（免电脑）
+## 安卓 App：Limbus 助手（免电脑）
 
-基于 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp) 打包，直接在手机上运行，不需要电脑。
+`android/` 下的独立 App，直接在手机上运行，**不需要电脑、Shizuku、root 或开发者选项**：
 
-**要求**：Android 10 及以上（后台模式），并安装 [Shizuku](https://shizuku.rikka.app/)（免 root）或已 root。
+- 截图：系统「屏幕录制」（MediaProjection）
+- 点击：无障碍服务（AccessibilityService）
+- 识别：自带的小型任务引擎（`android/core`），直接执行 `assets/resource/pipeline` 里的任务 JSON，用 OpenCV 做模板匹配
+- 长屏（如 20:9）会自动换算坐标，不需要修改分辨率
 
-1. 下载 APK：GitHub Actions 中 `android` 工作流的 Artifacts，或 Releases 页面
-2. 安装并启动 Shizuku：开发者选项 → 打开「无线调试」→ 在 Shizuku 里选「通过无线调试启动」并按提示配对（之后每次重启手机都要在 Shizuku 里重新启动一次）
-3. 打开 MAALimbusCompany App → 授予通知、电池白名单 → 选择 Shizuku 并授权
-4. 运行模式选 **后台模式（720P 或 1080P）**：游戏会在 16:9 的虚拟屏上运行，与识别模板一致，期间手机仍可正常使用
-   - 前台模式直接操作当前屏幕，仅适合本身就是 16:9 的设备
-5. 任务列表 **第一个放「启动游戏」**，再加入经验本、纺锤本等任务，开始运行
+**要求**：Android 10 及以上，arm64 手机。
+
+1. 下载 APK：GitHub Actions 中 `android` 工作流的 Artifacts（`LimbusHelper-apk`），或 Releases 页面
+2. 安装后进入 设置 → 应用程序 → Limbus 助手 → 右上角 ⋮ → **允许受限制的设置**（Android 13+ 侧载应用必须先做这一步，否则无法开启无障碍服务）
+3. 打开 App → 「开启无障碍服务设置」→ 已安装的应用程序 → Limbus 助手 → 开启
+4. 勾选任务（第一个建议勾选「启动游戏」）→ 开始 → 系统询问录制画面时选择 **整个屏幕**
+5. 运行中可在通知栏点「停止」；节点超时时会把当时的画面存到 `图片/LimbusHelper/`，方便排查
 
 ### 自行签名（可选）
 
-不设置签名时 CI 会输出 debug 包，每次构建的签名不同，更新时需先卸载旧版。
-在仓库 Settings → Secrets and variables → Actions 中设置以下 Secrets 后，会改为输出签名固定的 release 包，可直接覆盖升级：
+不设置签名时 APK 使用 CI 的 debug 签名，每次构建的签名不同，更新时需先卸载旧版。
+在仓库 Settings → Secrets and variables → Actions 中设置以下 Secrets 后，会改用固定签名，可直接覆盖升级：
 
 | Secret | 内容 |
 |---|---|
@@ -50,7 +54,6 @@
 
 ## 致谢
 
-- 安卓 App 基于 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)（AGPL-3.0）
 - 部分识别模板（`assets/resource/image/aalc/`）移植自 [AhabAssistantLimbusCompany](https://github.com/KIYI671/AhabAssistantLimbusCompany)（AGPL-3.0），已由 2560x1440 换算为 1280x720。
 
 ## 其他项目
