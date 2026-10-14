@@ -12,7 +12,7 @@
 ## 与其他项目的区别
 
 由于采用 MAA 框架进行开发，这个自动化工具支持的目标为 **Android 设备/模拟器**，并不支持PC端（Steam）游戏的自动化。
-本工具运行在电脑上，通过 ADB 控制 Android 手机或模拟器中的游戏。
+电脑版运行在电脑上，通过 ADB 控制 Android 手机或模拟器中的游戏；也可以使用下方的 **安卓 App**，直接在手机上运行。
 
 > [!IMPORTANT]
 > 所有识别模板均基于 **16:9（1280x720）** 画面。真机多为 20:9 等长屏，请先用 ADB 把分辨率临时改为 16:9：
@@ -21,9 +21,37 @@
 > adb shell wm size reset       # 用完后恢复
 > ```
 
+## 安卓 App（免电脑）
+
+基于 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp) 打包，直接在手机上运行，不需要电脑。
+
+**要求**：Android 10 及以上（后台模式），并安装 [Shizuku](https://shizuku.rikka.app/)（免 root）或已 root。
+
+1. 下载 APK：GitHub Actions 中 `android` 工作流的 Artifacts，或 Releases 页面
+2. 安装并启动 Shizuku：开发者选项 → 打开「无线调试」→ 在 Shizuku 里选「通过无线调试启动」并按提示配对（之后每次重启手机都要在 Shizuku 里重新启动一次）
+3. 打开 MAALimbusCompany App → 授予通知、电池白名单 → 选择 Shizuku 并授权
+4. 运行模式选 **后台模式（720P 或 1080P）**：游戏会在 16:9 的虚拟屏上运行，与识别模板一致，期间手机仍可正常使用
+   - 前台模式直接操作当前屏幕，仅适合本身就是 16:9 的设备
+5. 任务列表 **第一个放「启动游戏」**，再加入经验本、纺锤本等任务，开始运行
+
+### 自行签名（可选）
+
+不设置签名时 CI 会输出 debug 包，每次构建的签名不同，更新时需先卸载旧版。
+在仓库 Settings → Secrets and variables → Actions 中设置以下 Secrets 后，会改为输出签名固定的 release 包，可直接覆盖升级：
+
+| Secret | 内容 |
+|---|---|
+| `ANDROID_KEYSTORE_BASE64` | keystore 文件的 base64（`base64 -w0 release.jks`） |
+| `ANDROID_KEYSTORE_PASSWORD` | keystore 密码 |
+| `ANDROID_KEY_ALIAS` | key 别名 |
+| `ANDROID_KEY_PASSWORD` | key 密码 |
+
+生成 keystore：`keytool -genkeypair -v -keystore release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias limbus`
+
 ## 致谢
 
-部分识别模板（`assets/resource/image/aalc/`）移植自 [AhabAssistantLimbusCompany](https://github.com/KIYI671/AhabAssistantLimbusCompany)（AGPL-3.0），已由 2560x1440 换算为 1280x720。
+- 安卓 App 基于 [MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)（AGPL-3.0）
+- 部分识别模板（`assets/resource/image/aalc/`）移植自 [AhabAssistantLimbusCompany](https://github.com/KIYI671/AhabAssistantLimbusCompany)（AGPL-3.0），已由 2560x1440 换算为 1280x720。
 
 ## 其他项目
 
