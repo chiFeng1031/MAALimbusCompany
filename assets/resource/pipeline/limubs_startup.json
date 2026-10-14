@@ -1,6 +1,9 @@
 {
     "Sub_Limbus_Startup": {
         "next": [
+            "[JumpBack]Sub_Retry",
+            "[JumpBack]Sub_NotificationClose",
+            "[JumpBack]Sub_CloseEventPopup",
             "[JumpBack]Limbus_HomeBtn",
             "Limbus_IntroScr",
             "[JumpBack]Sub_Confirm",
@@ -15,11 +18,14 @@
     },
     "Limbus_Home": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/Startup/MainSc.png",
+        "template": [
+            "limbus_template/Startup/MainSc.png",
+            "aalc/share/home/window_assets.png"
+        ],
         "roi": [
             596,
             571,
-            154,
+            270,
             129
         ]
     },
@@ -41,7 +47,8 @@
         "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
         "template": [
-            "limbus_template/Startup/BtnBack.png"
+            "limbus_template/Startup/BtnBack.png",
+            "aalc/share/home/back_assets.png"
         ],
         "roi": [
             11,
@@ -75,7 +82,7 @@
         "roi": [
             578,
             566,
-            185,
+            288,
             154
         ],
         "action": "Click"
@@ -140,12 +147,57 @@
     "Sub_CancelCraft": {
         "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
-        "template": "limbus_template/Startup/CancelCraft.png",
+        "template": [
+            "limbus_template/Startup/CancelCraft.png",
+            "aalc/share/enkephalin/enkephalin_cancel_assets.png"
+        ],
         "roi": [
             345,
             450,
             209,
             167
+        ],
+        "action": "Click"
+    },
+    "Sub_NotificationClose": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "aalc/en/base/notification_close_assets.png"
+        ],
+        "roi": [
+            529,
+            423,
+            219,
+            90
+        ],
+        "action": "Click"
+    },
+    "Sub_Retry": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "aalc/en/base/retry.png"
+        ],
+        "threshold": 0.8,
+        "roi": [
+            240,
+            240,
+            800,
+            400
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "Sub_CloseEventPopup": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "aalc/share/home/close_anniversary_event_assets.png"
+        ],
+        "threshold": 0.8,
+        "roi": [
+            993,
+            114,
+            68,
+            66
         ],
         "action": "Click"
     }

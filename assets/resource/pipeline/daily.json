@@ -36,18 +36,24 @@
     },
     "Sub_DriveView": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/Drive.png",
+        "template": [
+            "limbus_template/daily/Drive.png",
+            "aalc/share/home/drive_assets.png"
+        ],
         "roi": [
             798,
             567,
-            157,
+            226,
             131
         ],
         "action": "Click"
     },
     "Sub_LuxcavationBtn": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/LuxcavationBtn.png",
+        "template": [
+            "limbus_template/daily/LuxcavationBtn.png",
+            "aalc/en/home/luxcavation_assets.png"
+        ],
         "roi": [
             321,
             65,
@@ -59,7 +65,10 @@
     "Sub_ThreadLuxcavationBtn": {
         "threshold": 0.92,
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/Thread.png",
+        "template": [
+            "limbus_template/daily/Thread.png",
+            "aalc/share/luxcavation/thread_assets.png"
+        ],
         "roi": [
             31,
             258,
@@ -73,7 +82,10 @@
         "any_of": [
             {
                 "recognition": "TemplateMatch",
-                "template": "limbus_template/daily/DiffSelect.png",
+                "template": [
+                    "limbus_template/daily/DiffSelect.png",
+                    "aalc/share/luxcavation/thread_consume.png"
+                ],
                 "roi": [
                     736,
                     314,
@@ -83,7 +95,10 @@
             },
             {
                 "recognition": "TemplateMatch",
-                "template": "limbus_template/daily/DiffSelect.png",
+                "template": [
+                    "limbus_template/daily/DiffSelect.png",
+                    "aalc/share/luxcavation/thread_consume.png"
+                ],
                 "roi": [
                     774,
                     415,
@@ -93,7 +108,10 @@
             },
             {
                 "recognition": "TemplateMatch",
-                "template": "limbus_template/daily/DiffSelect.png",
+                "template": [
+                    "limbus_template/daily/DiffSelect.png",
+                    "aalc/share/luxcavation/thread_consume.png"
+                ],
                 "roi": [
                     771,
                     225,
@@ -119,7 +137,10 @@
     },
     "Sub_ThreadBattleBtn": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/ThreadBattle.png",
+        "template": [
+            "limbus_template/daily/ThreadBattle.png",
+            "aalc/share/luxcavation/thread_enter_assets.png"
+        ],
         "threshold": 0.92,
         "roi": [
             240,
@@ -183,7 +204,10 @@
     },
     "LuxcavationEnter": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/Enter.png",
+        "template": [
+            "limbus_template/daily/Enter.png",
+            "aalc/share/luxcavation/exp_enter.png"
+        ],
         "roi": [
             948,
             416,
@@ -198,7 +222,10 @@
     },
     "PartySelectBtn": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/ToBattle.png",
+        "template": [
+            "limbus_template/daily/ToBattle.png",
+            "aalc/en/battle/normal_to_battle_assets.png"
+        ],
         "roi": [
             1019,
             509,

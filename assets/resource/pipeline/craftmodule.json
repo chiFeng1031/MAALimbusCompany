@@ -1,5 +1,5 @@
 {
-    "CraftModule":{
+    "CraftModule": {
         "pre_wait_freezes": 1500,
         "next": [
             "EnoughPt",
@@ -11,7 +11,10 @@
         "recognition": "TemplateMatch",
         "template": "limbus_template/daily/NoEnergy.png",
         "roi": [
-            292, 607, 61, 113
+            292,
+            607,
+            61,
+            113
         ],
         "action": "DoNothing"
     },
@@ -20,7 +23,10 @@
         "threshold": 0.92,
         "template": "limbus_template/daily/Energy.png",
         "roi": [
-            243,608,149,112
+            243,
+            608,
+            149,
+            112
         ],
         "action": "Click",
         "next": [
@@ -31,9 +37,15 @@
     },
     "SelectAll": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/SelAll.png",
+        "template": [
+            "limbus_template/daily/SelAll.png",
+            "aalc/share/enkephalin/all_in_assets.png"
+        ],
         "roi": [
-            734,258,146,141
+            734,
+            258,
+            146,
+            141
         ],
         "action": "Click",
         "next": [
@@ -43,19 +55,30 @@
     },
     "ConfirmCraft": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/ConfirmCraft.png",
+        "template": [
+            "limbus_template/daily/ConfirmCraft.png",
+            "aalc/share/enkephalin/enkephalin_confirm_assets.png"
+        ],
         "roi": [
-            600,462,188,149
+            600,
+            462,
+            188,
+            149
         ],
         "action": "Click"
     },
     "CancelCraft": {
         "recognition": "TemplateMatch",
-        "template": "limbus_template/daily/CancelCraft.png",
+        "template": [
+            "limbus_template/daily/CancelCraft.png",
+            "aalc/share/enkephalin/enkephalin_cancel_assets.png"
+        ],
         "roi": [
-            424, 465, 124, 136
+            424,
+            465,
+            124,
+            136
         ],
         "action": "Click"
     }
-
 }
