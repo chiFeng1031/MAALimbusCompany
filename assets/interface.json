@@ -21,6 +21,11 @@
     ],
     "task": [
         {
+            "name": "启动游戏",
+            "entry": "LimbusStartGame",
+            "description": "启动 Limbus Company 并等待进入主界面。使用安卓 App 的后台模式时，请把它放在任务列表第一个。"
+        },
+        {
             "name": "经验本（战斗）",
             "entry": "ExpLuxcavation"
         },

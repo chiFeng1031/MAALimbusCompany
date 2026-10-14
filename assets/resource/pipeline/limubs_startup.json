@@ -200,5 +200,41 @@
             66
         ],
         "action": "Click"
+    },
+    "LimbusStartGame": {
+        "doc": "启动游戏（安卓 App 后台模式需要用它在虚拟屏上拉起游戏；游戏已在运行时只会切到前台）",
+        "action": "StartApp",
+        "package": "com.ProjectMoon.LimbusCompany",
+        "post_delay": 5000,
+        "next": [
+            "LimbusWaitHome"
+        ]
+    },
+    "LimbusWaitHome": {
+        "doc": "等待进入主界面，期间处理标题画面与各类弹窗；游戏加载/下载较慢，所以超时设为 5 分钟",
+        "timeout": 300000,
+        "rate_limit": 2000,
+        "next": [
+            "Limbus_Home",
+            "[JumpBack]Sub_Retry",
+            "[JumpBack]Sub_NotificationClose",
+            "[JumpBack]Sub_CloseEventPopup",
+            "[JumpBack]Limbus_TapToStart",
+            "[JumpBack]Sub_Confirm",
+            "[JumpBack]Limbus_HomeBtn",
+            "[JumpBack]Sub_Limbus_BtnBack"
+        ]
+    },
+    "Limbus_TapToStart": {
+        "recognition": "TemplateMatch",
+        "template": "limbus_template/Startup/StartGame.png",
+        "roi": [
+            388,
+            433,
+            501,
+            136
+        ],
+        "action": "Click",
+        "post_wait_freezes": 2000
     }
 }
