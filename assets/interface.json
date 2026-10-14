@@ -1,7 +1,7 @@
 {
     "interface_version": 2,
     "name": "MAALimbusCompany",
-    "description": "基于 MaaFramework 的 LimbusCompany（边狱公司）小助手，支持安卓模拟器与 PC（Steam）。安卓建议分辨率 1280x720；PC 请使用 16:9 窗口。游戏 Render Scaling 设为 Medium 以上，语言设为 English。",
+    "description": "基于 MaaFramework 的 LimbusCompany（边狱公司）安卓端小助手。建议设备/模拟器分辨率 1280x720（16:9），游戏 Render Scaling 设为 Medium 以上，语言设为 English。",
     "github": "https://github.com/chiFeng1031/MAALimbusCompany",
     "version": "v0.0.1",
     "controller": [
@@ -9,30 +9,6 @@
             "name": "ADB 默认方式",
             "type": "Adb",
             "display_short_side": 720
-        },
-        {
-            "name": "PC 端（前台，兼容性高）",
-            "type": "Win32",
-            "display_short_side": 720,
-            "win32": {
-                "class_regex": "UnityWndClass",
-                "window_regex": "^LimbusCompany$",
-                "screencap": "FramePool",
-                "mouse": "Seize",
-                "keyboard": "Seize"
-            }
-        },
-        {
-            "name": "PC 端（后台）",
-            "type": "Win32",
-            "display_short_side": 720,
-            "win32": {
-                "class_regex": "UnityWndClass",
-                "window_regex": "^LimbusCompany$",
-                "screencap": "FramePool",
-                "mouse": "PostMessage",
-                "keyboard": "PostMessage"
-            }
         }
     ],
     "resource": [

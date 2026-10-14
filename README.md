@@ -9,12 +9,17 @@
 
 在使用 MAALimbusCompany 时，建议将模拟器分辨率配置为 `1280x720`，且 LimbusCompany 游戏本体的 `Render Scaling` 选项配置到 `Medium` 以上，语言配置为 `English`
 
-## 支持平台
+## 与其他项目的区别
 
-- **Android 设备 / 模拟器**：控制器选择 `ADB 默认方式`，分辨率建议 `1280x720`
-- **PC（Steam）**：控制器选择 `PC 端（前台，兼容性高）` 或 `PC 端（后台）`，请使用 16:9 窗口（如 1280x720、1920x1080、2560x1440）
-  - 前台模式会占用鼠标，兼容性最好；后台模式不占用鼠标，但部分环境可能点击无效
-  - 若游戏以管理员权限运行，本工具也需要以管理员权限运行
+由于采用 MAA 框架进行开发，这个自动化工具支持的目标为 **Android 设备/模拟器**，并不支持PC端（Steam）游戏的自动化。
+本工具运行在电脑上，通过 ADB 控制 Android 手机或模拟器中的游戏。
+
+> [!IMPORTANT]
+> 所有识别模板均基于 **16:9（1280x720）** 画面。真机多为 20:9 等长屏，请先用 ADB 把分辨率临时改为 16:9：
+> ```bash
+> adb shell wm size 1080x1920   # 竖屏写法，等同横屏 1920x1080
+> adb shell wm size reset       # 用完后恢复
+> ```
 
 ## 致谢
 
@@ -22,7 +27,7 @@
 
 ## 其他项目
 
-如果您需要其他 PC 端工具，也可以前往下面的项目：
+如果您需要 PC 端（Steam）的自动化工具，可以前往下面的项目：
 
  - https://github.com/HSLix/LixAssistantLimbusCompany
  - https://github.com/Xie-Tiao/Limbus-Scripts
