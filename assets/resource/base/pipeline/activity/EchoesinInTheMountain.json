@@ -6,7 +6,7 @@
             "EITM_入口1",
             "EITM_重置",
             "EITM_退出",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "EITM_入口1": {

@@ -1,121 +1,151 @@
 {
-    "Sub_Limbus_Startup": 
-    {
-        "is_sub": true,
+    "Sub_Limbus_Startup": {
         "next": [
-            "Limbus_HomeBtn",
+            "[JumpBack]Limbus_HomeBtn",
             "Limbus_IntroScr",
-            "Sub_Confirm",
-            "Sub_BattleGiveUp",
-            "Sub_BattleSetting",
-            "Sub_Limbus_InitPayFail",
-            "Sub_Limbus_BtnBack",
-            "Sub_CancelCraft",
+            "[JumpBack]Sub_Confirm",
+            "[JumpBack]Sub_BattleGiveUp",
+            "[JumpBack]Sub_BattleSetting",
+            "[JumpBack]Sub_Limbus_InitPayFail",
+            "[JumpBack]Sub_Limbus_BtnBack",
+            "[JumpBack]Sub_CancelCraft",
             "Limbus_Home"
         ],
         "timeout": 20000
     },
-    "Limbus_Home":
-    {
+    "Limbus_Home": {
         "recognition": "TemplateMatch",
         "template": "limbus_template/Startup/MainSc.png",
         "roi": [
-            596,571,154,129
+            596,
+            571,
+            154,
+            129
         ]
     },
-    "Limbus_IntroScr":
-    {
+    "Limbus_IntroScr": {
         "recognition": "TemplateMatch",
         "template": "limbus_template/Startup/StartGame.png",
         "roi": [
-            388,433,501,136
+            388,
+            433,
+            501,
+            136
         ],
         "action": "Click",
         "next": [
             "Limbus_Home"
         ]
     },
-    "Sub_Limbus_BtnBack":
-    {
+    "Sub_Limbus_BtnBack": {
         "pre_wait_freezes": 500,
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "limbus_template/Startup/BtnBack.png"
         ],
         "roi": [
-            11,0,171,146
+            11,
+            0,
+            171,
+            146
         ],
         "action": "Click"
     },
-    "Sub_Limbus_InitPayFail":
-    {
+    "Sub_Limbus_InitPayFail": {
         "pre_wait_freezes": 500,
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "limbus_template/Startup/PayFail.png"
         ],
         "roi": [
-            437,424,408,144
+            437,
+            424,
+            408,
+            144
         ],
         "action": "Click"
     },
-    "Limbus_HomeBtn":
-    {
+    "Limbus_HomeBtn": {
         "pre_wait_freezes": 500,
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "limbus_template/Startup/BtnHome.png"
         ],
         "threshold": 0.85,
         "roi": [
-            578, 566, 185, 154
+            578,
+            566,
+            185,
+            154
         ],
         "action": "Click"
     },
-    "Sub_Confirm":
-    {
-        "is_sub": true,
+    "Sub_Confirm": {
         "pre_wait_freezes": 500,
-        "recognition": "TemplateMatch",
-        "template": ["limbus_template/daily/Confirm.png",
-                     "limbus_template/daily/Confirm2.png"],
-        "roi": [[1015,511,265,180],
-        [968, 472, 160, 181]],
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": [
+                    "limbus_template/daily/Confirm.png",
+                    "limbus_template/daily/Confirm2.png"
+                ],
+                "roi": [
+                    1015,
+                    511,
+                    265,
+                    180
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": [
+                    "limbus_template/daily/Confirm.png",
+                    "limbus_template/daily/Confirm2.png"
+                ],
+                "roi": [
+                    968,
+                    472,
+                    160,
+                    181
+                ]
+            }
+        ],
         "action": "Click"
     },
-    "Sub_BattleSetting":
-    {
-        "is_sub": true,
+    "Sub_BattleSetting": {
         "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Startup/BattleSetting.png",
         "roi": [
-            1162,0,118,139
+            1162,
+            0,
+            118,
+            139
         ],
         "action": "Click"
     },
-    "Sub_BattleGiveUp":
-    {
-        "is_sub": true,
+    "Sub_BattleGiveUp": {
         "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Startup/GiveUp.png",
         "roi": [
-            453,327,372,136
+            453,
+            327,
+            372,
+            136
         ],
         "action": "Click"
     },
-    "Sub_CancelCraft":
-    {
-        "is_sub": true,
+    "Sub_CancelCraft": {
         "pre_wait_freezes": 500,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Startup/CancelCraft.png",
         "roi": [
-            345,450,209,167
+            345,
+            450,
+            209,
+            167
         ],
         "action": "Click"
     }

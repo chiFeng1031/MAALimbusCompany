@@ -7,7 +7,7 @@
             "CollectTrust",
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "EnterWilderness": {
@@ -27,7 +27,7 @@
             "CollectTrust",
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeLoading"
+            "[JumpBack]Sub_HomeLoading"
         ]
     },
     "CollectEXP": {
@@ -46,7 +46,7 @@
             "CollectTrust",
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     },
@@ -65,7 +65,7 @@
             "CollectTrust",
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     },
@@ -84,7 +84,7 @@
             "CollectTrust",
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     },
@@ -101,7 +101,7 @@
         "next": [
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     },
@@ -118,13 +118,13 @@
         "next": [
             "TrustDialogueNext",
             "TrustDialogueInteraction",
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     },
     "TrustMax": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "MAX"
         ],
         "roi": [
@@ -134,7 +134,7 @@
             638
         ],
         "next": [
-            "Sub_HomeButton",
+            "[JumpBack]Sub_HomeButton",
             "HomeFlag"
         ]
     }

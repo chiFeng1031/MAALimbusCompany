@@ -5,7 +5,7 @@
             "PsychubeResourceStages",
             "FreePsychubeStages",
             "PsychubeStages_7",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "PsychubeEnterTheShow": {
@@ -63,7 +63,7 @@
         ],
         "next": [
             "HomeFlag",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "PsychubeStages_7": {
@@ -84,7 +84,7 @@
     },
     "PsychubeReadyForAction": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "开始行动"
         ],
         "roi": [
@@ -101,21 +101,28 @@
         ]
     },
     "PsychubeSwitchToReplay": {
-        "recognition": "TemplateMatch",
-        "template": "Psychube/SwitchToReplay.png",
-        "roi": [
-            [
-                781,
-                581,
-                145,
-                139
-            ],
-            [
-                548,
-                569,
-                166,
-                151
-            ]
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "Psychube/SwitchToReplay.png",
+                "roi": [
+                    781,
+                    581,
+                    145,
+                    139
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "Psychube/SwitchToReplay.png",
+                "roi": [
+                    548,
+                    569,
+                    166,
+                    151
+                ]
+            }
         ],
         "action": "Click",
         "next": [

@@ -3,11 +3,11 @@
         "pre_wait_freezes": 1500,
         "next": [
             "NoMission",
-            "Sub_MainMenuNotice",
+            "[JumpBack]Sub_MainMenuNotice",
             "Sub_MissionClick",
-            "Sub_MissionNotice",
+            "[JumpBack]Sub_MissionNotice",
             "Sub_NoMissionNotice",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
     "NoMission": {
@@ -20,7 +20,6 @@
         "action": "DoNothing"
     },
     "Sub_MainMenuNotice": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "threshold": 0.8,
         "template": "limbus_template/daily/seasonpass3.png",
@@ -31,7 +30,6 @@
         "action": "Click"
     },
     "Sub_MissionNotice": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "threshold": 0.85,
         "template": "limbus_template/daily/MissionNotice.png",

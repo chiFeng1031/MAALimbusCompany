@@ -1,16 +1,15 @@
 {
     "Awards": {
         "next": [
-            "Sub_MailBadge",
-            "Sub_JukeboxBadge",
-            "Sub_DailyBadge",
+            "[JumpBack]Sub_MailBadge",
+            "[JumpBack]Sub_JukeboxBadge",
+            "[JumpBack]Sub_DailyBadge",
             "HomeFlag",
-            "Sub_ObtainedAwards",
-            "Sub_StartUp"
+            "[JumpBack]Sub_ObtainedAwards",
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "Sub_MailBadge": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/MailBadge.png",
         "threshold": 0.98,
@@ -23,7 +22,7 @@
         "action": "Click",
         "next": [
             "CollectMailAwards",
-            "Sub_MailBadge"
+            "[JumpBack]Sub_MailBadge"
         ]
     },
     "CollectMailAwards": {
@@ -37,13 +36,12 @@
         ],
         "action": "Click",
         "next": [
-            "Sub_ObtainedAwards",
+            "[JumpBack]Sub_ObtainedAwards",
             "NoMailAwards",
             "CollectMailAwards"
         ]
     },
     "Sub_ObtainedAwards": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/ObtainedAwards.png",
         "roi": [
@@ -65,12 +63,11 @@
         ],
         "next": [
             "HomeFlag",
-            "Sub_HomeButton",
-            "Sub_BackButton"
+            "[JumpBack]Sub_HomeButton",
+            "[JumpBack]Sub_BackButton"
         ]
     },
     "Sub_DailyBadge": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/DailyBadge.png",
         "threshold": 0.98,
@@ -83,14 +80,13 @@
             110
         ],
         "next": [
-            "Sub_CollectDailyAwards",
-            "Sub_ObtainedDailyAwards",
+            "[JumpBack]Sub_CollectDailyAwards",
+            "[JumpBack]Sub_ObtainedDailyAwards",
             "WeeklyAwardsBadge",
             "DailyAwardsPageFlag"
         ]
     },
     "Sub_CollectDailyAwards": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "Awards/CollectDailyAwards.png",
@@ -106,7 +102,6 @@
         ]
     },
     "Sub_ObtainedDailyAwards": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/ObtainedAwards.png",
         "roi": [
@@ -129,10 +124,10 @@
             113
         ],
         "next": [
-            "Sub_CollectDailyAwards",
-            "Sub_ObtainedDailyAwards",
+            "[JumpBack]Sub_CollectDailyAwards",
+            "[JumpBack]Sub_ObtainedDailyAwards",
             "WeeklyAwardsBadge",
-            "Sub_BackButton",
+            "[JumpBack]Sub_BackButton",
             "HomeFlag"
         ]
     },
@@ -147,7 +142,6 @@
         ]
     },
     "Sub_JukeboxBadge": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/JukeboxBadge.png",
         "roi": [
@@ -159,14 +153,13 @@
         "action": "Click",
         "post_wait_freezes": 1,
         "next": [
-            "Sub_CollectJukeboxExp",
-            "Sub_JukeboxAwardsBadge",
-            "Sub_BackButton",
+            "[JumpBack]Sub_CollectJukeboxExp",
+            "[JumpBack]Sub_JukeboxAwardsBadge",
+            "[JumpBack]Sub_BackButton",
             "HomeFlag"
         ]
     },
     "Sub_JukeboxBadge_MysteryBoxCarnival": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/JukeboxBadge.png",
         "roi": [
@@ -178,14 +171,13 @@
         "action": "Click",
         "post_wait_freezes": 1,
         "next": [
-            "Sub_CollectJukeboxExp",
-            "Sub_JukeboxAwardsBadge",
-            "Sub_BackButton",
+            "[JumpBack]Sub_CollectJukeboxExp",
+            "[JumpBack]Sub_JukeboxAwardsBadge",
+            "[JumpBack]Sub_BackButton",
             "HomeFlag"
         ]
     },
     "Sub_CollectJukeboxExp": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "Awards/CollectJukebox.png",
@@ -200,7 +192,6 @@
         "action": "Click"
     },
     "Sub_JukeboxAwardsBadge": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/JukeboxAwardsBadge.png",
         "threshold": 0.8,
@@ -212,14 +203,13 @@
         ],
         "action": "Click",
         "next": [
-            "Sub_CollectJukeboxAwards",
-            "Sub_ObtainedJukeboxAwards",
+            "[JumpBack]Sub_CollectJukeboxAwards",
+            "[JumpBack]Sub_ObtainedJukeboxAwards",
             "NoJukeboxAwards",
-            "Sub_JukeboxAwardsBadge"
+            "[JumpBack]Sub_JukeboxAwardsBadge"
         ]
     },
     "Sub_CollectJukeboxAwards": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Awards/CollectJukebox.png",
         "roi": [
@@ -231,9 +221,8 @@
         "action": "Click"
     },
     "Sub_ObtainedJukeboxAwards": {
-        "is_sub": true,
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "获得",
             "物品"
         ],

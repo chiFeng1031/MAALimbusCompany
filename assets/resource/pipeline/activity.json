@@ -3,22 +3,22 @@
         "pre_wait_freezes": 500,
         "next": [
             "EnterStage",
-            "Sub_Sea_12",
-            "Sub_Sea_SelectView",
-            "Sub_Sea_StageSelect",
-            "Sub_Enter_SeaHell",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Sea_12",
+            "[JumpBack]Sub_Sea_SelectView",
+            "[JumpBack]Sub_Sea_StageSelect",
+            "[JumpBack]Sub_Enter_SeaHell",
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
     "Mission_4_5_11":{
         "pre_wait_freezes": 500,
         "next": [
             "EnterStage",
-            "Sub_Sea_11",
-            "Sub_Sea_SelectView",
-            "Sub_Sea_StageSelect",
-            "Sub_Enter_SeaHell",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Sea_11",
+            "[JumpBack]Sub_Sea_SelectView",
+            "[JumpBack]Sub_Sea_StageSelect",
+            "[JumpBack]Sub_Enter_SeaHell",
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
     "EnterStage": {
@@ -33,7 +33,6 @@
         ]
     },
     "Sub_Sea_12": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/SeaHell/12.png",
         "roi": [
@@ -43,7 +42,6 @@
         "target_offset": [75, 137, -149, -11]
     },
     "Sub_Sea_11": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/SeaHell/11.png",
         "roi": [
@@ -53,7 +51,6 @@
         "target_offset": [75, 126, -145, -9]
     },
     "Sub_Sea_SelectView": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/SeaHell/SelectView.png",
         "roi": [
@@ -65,7 +62,6 @@
     
     },
     "Sub_Sea_StageSelect": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/SeaHell/StageSelect.png",
         "roi": [
@@ -74,7 +70,6 @@
         "action": "Click"
     },
     "Sub_Enter_SeaHell": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/SeaHell/SeaHell.png",
         "roi": [

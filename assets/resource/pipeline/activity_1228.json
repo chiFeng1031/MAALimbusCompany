@@ -3,34 +3,33 @@
         "pre_wait_freezes": 500,
         "next": [
             "EnterStageMiracle",
-            "Sub_Miracle_13",
-            "Sub_Miracle_SelectView",
-            "SkipStory_Confirm",
-            "SkipStory_SecondStep",
-            "SkipStory_FirstStep",
-            "Sub_Miracle_StageSelect",
-            "Sub_Enter_Miracle",
-            "Sub_DriveView",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Miracle_13",
+            "[JumpBack]Sub_Miracle_SelectView",
+            "[JumpBack]SkipStory_Confirm",
+            "[JumpBack]SkipStory_SecondStep",
+            "[JumpBack]SkipStory_FirstStep",
+            "[JumpBack]Sub_Miracle_StageSelect",
+            "[JumpBack]Sub_Enter_Miracle",
+            "[JumpBack]Sub_DriveView",
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
     "Mission_5_5_11":{
         "pre_wait_freezes": 500,
         "next": [
             "EnterStageMiracle",
-            "Sub_Miracle_11",
-            "Sub_Miracle_SelectView",
-            "SkipStory_Confirm",
-            "SkipStory_SecondStep",
-            "SkipStory_FirstStep",
-            "Sub_Miracle_StageSelect",
-            "Sub_Enter_Miracle",
-            "Sub_DriveView",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Miracle_11",
+            "[JumpBack]Sub_Miracle_SelectView",
+            "[JumpBack]SkipStory_Confirm",
+            "[JumpBack]SkipStory_SecondStep",
+            "[JumpBack]SkipStory_FirstStep",
+            "[JumpBack]Sub_Miracle_StageSelect",
+            "[JumpBack]Sub_Enter_Miracle",
+            "[JumpBack]Sub_DriveView",
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
     "SkipStory_Confirm": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/StoryConfirm.png",
         "roi": [
@@ -39,7 +38,6 @@
         "action": "Click"
     },
     "SkipStory_SecondStep": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/StorySkip.png",
         "roi": [
@@ -48,7 +46,6 @@
         "action": "Click"
     },
     "SkipStory_FirstStep": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/Story1.png",
         "roi": [
@@ -69,7 +66,6 @@
         ]
     },
     "Sub_Miracle_13": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/13.png",
         "roi": [
@@ -78,7 +74,6 @@
         "action": "Click"
     },
     "Sub_Miracle_11": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/11.png",
         "roi": [
@@ -87,7 +82,6 @@
         "action": "Click"
     },
     "Sub_Miracle_SelectView": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/SelectView.png",
         "roi": [
@@ -99,7 +93,6 @@
 
     },
     "Sub_Miracle_StageSelect": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Miracle/StageSelect.png",
         "roi": [
@@ -108,7 +101,6 @@
         "action": "Click"
     },
     "Sub_Enter_Miracle": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": ["limbus_template/Miracle/MiracleIntro.png", "limbus_template/Miracle/MiracleIntroLofi.png"],
         "roi": [

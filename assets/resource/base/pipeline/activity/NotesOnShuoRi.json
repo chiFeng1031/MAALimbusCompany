@@ -2,7 +2,7 @@
     "NotesOnShuoRi": {
         "next": [
             "NotesOnShuoRiEnterTheShow",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "NotesOnShuoRiEnterTheShow": {
@@ -30,6 +30,6 @@
             140
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": ["SwipeLeftAndFindStage"]
     }
 }

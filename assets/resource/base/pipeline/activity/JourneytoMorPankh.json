@@ -2,7 +2,7 @@
     "JourneytoMorPankh": {
         "next": [
             "JourneytoMorPankhEnterTheShow",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "JourneytoMorPankhEnterTheShow": {

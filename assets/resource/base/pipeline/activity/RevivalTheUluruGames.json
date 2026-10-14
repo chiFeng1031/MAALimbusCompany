@@ -2,7 +2,7 @@
     "RevivalTheUluruGames": {
         "next": [
             "RevivalTheUluruGamesEnterTheShow",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "RevivalTheUluruGamesEnterTheShow": {
@@ -30,6 +30,6 @@
             154
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": ["SwipeLeftAndFindStage"]
     }
 }

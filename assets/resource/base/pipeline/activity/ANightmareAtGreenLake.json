@@ -2,7 +2,7 @@
     "ANightmareAtGreenLake": {
         "next": [
             "ANightmareAtGreenLakeEnterTheShow",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "ANightmareAtGreenLakeEnterTheShow": {
@@ -30,6 +30,6 @@
             177
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": ["SwipeLeftAndFindStage"]
     }
 }

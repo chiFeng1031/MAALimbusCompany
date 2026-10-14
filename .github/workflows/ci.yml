@@ -1,5 +1,10 @@
 name: install
 
+env:
+  # MaaFramework 版本：留空则下载 latest，填写具体版本号（如 v5.14.3）则固定版本
+  # 固定版本可避免上游出现破坏性更新时 CI 突然失效
+  MAAFW_VERSION: "v5.14.3"
+
 on:
   push:
     tags:
@@ -9,19 +14,21 @@ on:
     paths:
       - ".github/workflows/ci.yml"
       - "assets/**"
+      - "install.py"
   pull_request:
     branches:
       - "**"
     paths:
       - ".github/workflows/ci.yml"
       - "assets/**"
+      - "install.py"
   workflow_dispatch:
 
 jobs:
   meta:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - id: set_tag
@@ -29,7 +36,7 @@ jobs:
           is_release=${{ startsWith(github.ref, 'refs/tags/v') }}
           tag=$(git describe --tags --match "v*" ${{ github.ref }} || true)
           if [[ $tag != v* ]]; then
-            tag=$(curl -sX GET "https://api.github.com/repos/MaaAssistantArknights/MaaFramework/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+            tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
             if [[ $tag != v* ]]; then
               tag="v0.0.0"
             fi
@@ -47,64 +54,27 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
-  windows:
-    needs: meta
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        arch: [aarch64, x86_64]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1.8
-        with:
-          repository: MaaAssistantArknights/MaaFramework
-          fileName: "MAA-win-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
-
-      - name: Install
-        shell: bash
-        run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: MAALimbusCompany-win-${{ matrix.arch }}
-          path: "install"
-
-  ubuntu:
+  install:
     needs: meta
     runs-on: ubuntu-latest
-    container: archlinux:base-devel
     strategy:
       matrix:
+        os: [win, macos, linux]
         arch: [aarch64, x86_64]
       fail-fast: false
 
     steps:
-      - name: Install dep
-        run: |
-          pacman -Sy
-          pacman -S --noconfirm python git
-
-      # https://github.com/MaaAssistantArknights/MaaFramework/actions/runs/5643408179/job/15285186255
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
       - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1.8
+        uses: robinraju/release-downloader@v1
         with:
-          repository: MaaAssistantArknights/MaaFramework
-          fileName: "MAA-linux-${{ matrix.arch }}*"
-          latest: true
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
+          latest: ${{ env.MAAFW_VERSION == '' }}
+          tag: ${{ env.MAAFW_VERSION }}
           out-file-path: "deps"
           extract: true
 
@@ -113,49 +83,19 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
-          name: MAALimbusCompany-linux-${{ matrix.arch }}
-          path: "install"
-
-  macos:
-    needs: meta
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        arch: [aarch64, x86_64]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1.8
-        with:
-          repository: MaaAssistantArknights/MaaFramework
-          fileName: "MAA-macos-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
-
-      - name: Install
-        shell: bash
-        run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: MAALimbusCompany-macos-${{ matrix.arch }}
+          name: MAALimbusCompany-${{ matrix.os }}-${{ matrix.arch }}
           path: "install"
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, ubuntu, macos]
+    needs: [meta, install]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           path: assets
 
@@ -164,7 +104,7 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-      - uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v2
         with:
-          files: assets/*
+          files: assets/*.zip
           tag_name: ${{ needs.meta.outputs.tag }}

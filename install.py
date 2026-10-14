@@ -15,8 +15,9 @@ if __name__ == "__main__":
         ignore=shutil.ignore_patterns(
             "*MaaDbgControlUnit*",
             "*MaaThriftControlUnit*",
-            "*MaaWin32ControlUnit*",
             "*MaaRpc*",
+            "*MaaHttp*",
+            "*.node",
         ),
         dirs_exist_ok=True,
     )
@@ -37,7 +38,7 @@ if __name__ == "__main__":
     )
     shutil.copytree(
         working_dir / "assets" / "MaaCommonAssets" / "OCR" / "ppocr_v4" / "zh_cn",
-        install_path / "resource" / "base" / "model" / "ocr",
+        install_path / "resource" / "model" / "ocr",
         dirs_exist_ok=True,
     )
     shutil.copy2(

@@ -1,7 +1,11 @@
 # MAALimbusCompany
 
 基于全新架构的 亿韭韭韭（LimbusCompany） 小助手。图像技术 + 模拟控制，解放双手！  
-由 [MaaFramework](https://github.com/MaaAssistantArknights/MaaFramework) / [MaaCommon](https://github.com/MaaAssistantArknights/MaaCommon) 强力驱动！
+由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
+
+> [!NOTE]
+> 本项目已适配 MaaFramework v5（当前固定使用 v5.14.3，见 `.github/workflows/ci.yml` 中的 `MAAFW_VERSION`）。
+> Pipeline 已迁移为 v5 写法：`is_sub` → `[JumpBack]`、OCR `text` → `expected`、多 `roi` → `Or` 组合识别；`interface.json` 已升级为 ProjectInterface V2。
 
 在使用 MAALimbusCompany 时，建议将模拟器分辨率配置为 `1280x720`，且 LimbusCompany 游戏本体的 `Render Scaling` 选项配置到 `Medium` 以上，语言配置为 `English`
 
@@ -28,7 +32,7 @@
 
 ## 下载说明
 
-下载地址：<https://github.com/hxdnshx/MAALimbusCompany/releases>
+下载地址：<https://github.com/chiFeng1031/MAALimbusCompany/releases>
 
 ### Windows
 
@@ -163,19 +167,19 @@ Tasks:
 
 目前暂无正式版 GUI，但有以下由社区大佬们贡献的 GUI 项目，欢迎使用！
 
-- [MAA1999WPF](https://github.com/MLAcookie/MAA1999WPF) 拿WPF框架写的一个MAA199的UI（应该能导入吧）
+- [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia) 支持 ProjectInterface V2 的通用 GUI，将其解压到 `MaaPiCli` 同目录即可使用
 
 ## How to build
 
-**如果你要编译源码才看这节，否则直接 [下载](https://github.com/hxdnshx/MAALimbusCompany/releases) 即可**
+**如果你要编译源码才看这节，否则直接 [下载](https://github.com/chiFeng1031/MAALimbusCompany/releases) 即可**
 
 0. 完整克隆本项目及子项目
 
     ```bash
-    git clone --recursive https://github.com/hxdnshx/MAALimbusCompany.git
+    git clone --recursive https://github.com/chiFeng1031/MAALimbusCompany.git
     ```
 
-1. 下载 MaaFramework 的 [Release 包](https://github.com/MaaAssistantArknights/MaaFramework/releases)，解压到 `deps` 文件夹中
+1. 下载 MaaFramework 的 [Release 包](https://github.com/MaaXYZ/MaaFramework/releases)（建议 v5.14.3，文件名形如 `MAA-win-x86_64-v5.14.3.zip`），解压到 `deps` 文件夹中
 2. 安装
 
     ```python
@@ -186,7 +190,9 @@ Tasks:
 
 ## 开发相关
 
-- [MaaFramework 快速开始](https://github.com/MaaAssistantArknights/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
+- [MaaFramework 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
+- [任务流水线（Pipeline）协议](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.1-%E4%BB%BB%E5%8A%A1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%8F%E8%AE%AE.md)
+- [ProjectInterface V2 协议](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.3-ProjectInterfaceV2%E5%8D%8F%E8%AE%AE.md)
 
 ## Join us
 

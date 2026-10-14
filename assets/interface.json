@@ -1,16 +1,21 @@
 {
+    "interface_version": 2,
+    "name": "MAALimbusCompany",
+    "description": "基于 MaaFramework 的 LimbusCompany（边狱公司）小助手。建议模拟器分辨率 1280x720，游戏 Render Scaling 设为 Medium 以上，语言设为 English。",
+    "github": "https://github.com/chiFeng1031/MAALimbusCompany",
+    "version": "v0.0.1",
     "controller": [
         {
             "name": "ADB 默认方式",
             "type": "Adb",
-            "screencap": 16580608
+            "display_short_side": 720
         }
     ],
     "resource": [
         {
             "name": "官服",
             "path": [
-                "{PROJECT_DIR}/resource"
+                "./resource"
             ]
         }
     ],
@@ -63,8 +68,5 @@
             "name": "活动：WRAP快车谋杀案-27关",
             "entry": "Mission_6_5_27"
         }
-    ],
-    "recognizer": {},
-    "action": {},
-    "option": {}
+    ]
 }

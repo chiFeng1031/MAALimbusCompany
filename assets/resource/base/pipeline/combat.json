@@ -2,7 +2,7 @@
     "Combat": {
         "next": [
             "EnterTheShow",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "EnterTheShow": {
@@ -30,7 +30,7 @@
         "doc": "主线第一章 在我们的时代里",
         "next": [
             "MainChapter_1Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_1Enter": {
@@ -43,13 +43,15 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "MainChapter_2": {
         "doc": "主线第二章 夜色温柔",
         "next": [
             "MainChapter_2Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_2Enter": {
@@ -62,13 +64,15 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "MainChapter_3": {
         "doc": "主线第三章 故事一无所有",
         "next": [
             "MainChapter_3Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_3Enter": {
@@ -81,13 +85,15 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "MainChapter_4": {
         "doc": "主线第四章 老虎的金黄",
         "next": [
             "MainChapter_4Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_4Enter": {
@@ -100,13 +106,15 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "MainChapter_5": {
         "doc": "主线第五章 洞穴的囚徒",
         "next": [
             "MainChapter_5Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_5Enter": {
@@ -119,13 +127,15 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "MainChapter_6": {
         "doc": "主线第六章 今夜星光灿烂",
         "next": [
             "MainChapter_6Enter",
-            "Sub_SwipeLeftForChapter"
+            "[JumpBack]Sub_SwipeLeftForChapter"
         ]
     },
     "MainChapter_6Enter": {
@@ -138,10 +148,11 @@
             460
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "Sub_ResourceChapterLabel": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Combat/ResourceChapterLabel.png",
         "roi": [
@@ -165,7 +176,7 @@
         "doc": "尘埃运动",
         "next": [
             "ResourceChapter_LPEnter",
-            "Sub_ResourceChapterLabel"
+            "[JumpBack]Sub_ResourceChapterLabel"
         ]
     },
     "ResourceChapter_LPEnter": {
@@ -179,14 +190,16 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "ResourceChapter_MA": {
         "doc": "猪鼻美学",
         "next": [
             "ResourceChapter_MAEnter",
-            "Sub_ResourceChapterLabel",
-            "Sub_SwipeRightForChapter"
+            "[JumpBack]Sub_ResourceChapterLabel",
+            "[JumpBack]Sub_SwipeRightForChapter"
         ]
     },
     "ResourceChapter_MAEnter": {
@@ -200,14 +213,16 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "ResourceChapter_HP": {
         "doc": "丰收时令",
         "next": [
             "ResourceChapter_HPEnter",
-            "Sub_ResourceChapterLabel",
-            "Sub_SwipeRightForChapter"
+            "[JumpBack]Sub_ResourceChapterLabel",
+            "[JumpBack]Sub_SwipeRightForChapter"
         ]
     },
     "ResourceChapter_HPEnter": {
@@ -221,10 +236,11 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "Sub_PromotionChapterLabel": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "Combat/PromotionChapterLabel.png",
         "threshold": 0.98,
@@ -249,7 +265,7 @@
         "doc": "群山之声",
         "next": [
             "PromotionChapter_MEEnter",
-            "Sub_PromotionChapterLabel"
+            "[JumpBack]Sub_PromotionChapterLabel"
         ]
     },
     "PromotionChapter_MEEnter": {
@@ -263,13 +279,15 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "PromotionChapter_SL": {
         "doc": "星陨之所",
         "next": [
             "PromotionChapter_SLEnter",
-            "Sub_PromotionChapterLabel"
+            "[JumpBack]Sub_PromotionChapterLabel"
         ]
     },
     "PromotionChapter_SLEnter": {
@@ -283,14 +301,16 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "PromotionChapter_SS": {
         "doc": "深林之形",
         "next": [
             "PromotionChapter_SSEnter",
-            "Sub_PromotionChapterLabel",
-            "Sub_SwipeRightForChapter"
+            "[JumpBack]Sub_PromotionChapterLabel",
+            "[JumpBack]Sub_SwipeRightForChapter"
         ]
     },
     "PromotionChapter_SSEnter": {
@@ -304,14 +324,16 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "PromotionChapter_BW": {
         "doc": "荒兽之野",
         "next": [
             "PromotionChapter_BWEnter",
-            "Sub_PromotionChapterLabel",
-            "Sub_SwipeRightForChapter"
+            "[JumpBack]Sub_PromotionChapterLabel",
+            "[JumpBack]Sub_SwipeRightForChapter"
         ]
     },
     "PromotionChapter_BWEnter": {
@@ -325,10 +347,11 @@
             367
         ],
         "action": "Click",
-        "next": "SwipeLeftAndFindStage"
+        "next": [
+            "SwipeLeftAndFindStage"
+        ]
     },
     "Sub_SwipeRightForChapter": {
-        "is_sub": true,
         "action": "Swipe",
         "begin": [
             1100,
@@ -344,7 +367,6 @@
         ]
     },
     "Sub_SwipeLeftForChapter": {
-        "is_sub": true,
         "action": "Swipe",
         "begin": [
             100,
@@ -382,7 +404,7 @@
     },
     "TheFarLeftOfStageList": {
         "recognition": "OCR",
-        "text": "01",
+        "expected": "01",
         "roi": [
             0,
             470,
@@ -413,7 +435,7 @@
     },
     "StageDifficulty_Story": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "故事"
         ],
         "roi": [
@@ -429,7 +451,7 @@
     },
     "StageDifficulty_Hard": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "厄险"
         ],
         "roi": [
@@ -450,7 +472,7 @@
     },
     "ReadyForAction": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "开始行动"
         ],
         "roi": [
@@ -467,21 +489,28 @@
         ]
     },
     "SwitchToReplay": {
-        "recognition": "TemplateMatch",
-        "template": "Combat/SwitchToReplay.png",
-        "roi": [
-            [
-                781,
-                581,
-                145,
-                139
-            ],
-            [
-                548,
-                569,
-                166,
-                151
-            ]
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "Combat/SwitchToReplay.png",
+                "roi": [
+                    781,
+                    581,
+                    145,
+                    139
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "Combat/SwitchToReplay.png",
+                "roi": [
+                    548,
+                    569,
+                    166,
+                    151
+                ]
+            }
         ],
         "action": "Click",
         "next": [
@@ -520,7 +549,7 @@
     },
     "StartReplay": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "复现"
         ],
         "roi": [
@@ -538,7 +567,7 @@
     },
     "RecoveryPage": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "活性",
             "恢复"
         ],
@@ -552,12 +581,12 @@
         "target": "StartReplay",
         "next": [
             "HomeFlag",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     },
     "Replaying": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "行为",
             "复现"
         ],
@@ -575,7 +604,7 @@
     },
     "Victory": {
         "recognition": "OCR",
-        "text": [
+        "expected": [
             "战斗",
             "胜利"
         ],
@@ -590,7 +619,7 @@
             "Victory",
             "AllIn",
             "HomeFlag",
-            "Sub_StartUp"
+            "[JumpBack]Sub_StartUp"
         ]
     }
 }

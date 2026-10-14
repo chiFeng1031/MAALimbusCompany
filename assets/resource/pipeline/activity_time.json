@@ -3,20 +3,19 @@
         "pre_wait_freezes": 500,
         "next": [
             "EnterStageSword",
-            "Sub_Time_2",
-            "Sub_Time_SelectView",
-            "SkipStory_Confirm",
-            "SkipStory_SecondStep",
-            "SkipStory_FirstStep",
-            "Sub_Time_StageSelect",
-            "Sub_Enter_Time",
-            "Sub_DriveView",
-            "Sub_Limbus_Startup"
+            "[JumpBack]Sub_Time_2",
+            "[JumpBack]Sub_Time_SelectView",
+            "[JumpBack]SkipStory_Confirm",
+            "[JumpBack]SkipStory_SecondStep",
+            "[JumpBack]SkipStory_FirstStep",
+            "[JumpBack]Sub_Time_StageSelect",
+            "[JumpBack]Sub_Enter_Time",
+            "[JumpBack]Sub_DriveView",
+            "[JumpBack]Sub_Limbus_Startup"
         ]
     },
 
     "Sub_Time_2": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": ["limbus_template/Time/6_5_2.png"],
         "roi": [
@@ -25,7 +24,6 @@
         "action": "Click"
     },
     "Sub_Time_SelectView": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "threshold": 0.60,
         "template": "limbus_template/Time/TimeItem.png",
@@ -38,7 +36,6 @@
 
     },
     "Sub_Time_StageSelect": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "limbus_template/Time/StageSelect.png",
         "roi": [
@@ -48,7 +45,6 @@
         "post_wait_freezes": 3000
     },
     "Sub_Enter_Time": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": ["limbus_template/Time/TimeIntro.png"],
         "roi": [
